@@ -68,6 +68,8 @@ function App() {
       } else if (option === "3") {
         setDisplayOption(false);
         setMenu(c.CREATE_TRIP);
+      } else {
+        alert("Invalid Input");
       }
     } else if (menu === c.DRIVER) {
       if (option === "1") {
@@ -78,6 +80,46 @@ function App() {
         await axios.put(`http://localhost:5000/api/v1/driver/is_available/${userId}`,
           {
             "Is_Available": !data.is_available,
+          });
+        setforceRerender(forceRerender + 1);
+      } else if (option === "3") {
+        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        if (currentAssignment.status !== "PENDING") alert("Invalid Input");
+        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+          {
+            "Trip_Id": currentAssignment.trip_id,
+            "Driver_id": currentAssignment.driver_id,
+            "Status": "ACCEPTED",
+          });
+        setforceRerender(forceRerender + 1);
+      } else if (option === "4") {
+        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        if (currentAssignment.status !== "PENDING") alert("Invalid Input");
+        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+          {
+            "Trip_Id": currentAssignment.trip_id,
+            "Driver_id": currentAssignment.driver_id,
+            "Status": "REJECTED",
+          });
+        setforceRerender(forceRerender + 1);
+      } else if (option === "5") {
+        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        if (currentAssignment.status !== "ACCEPTED") alert("Invalid Input");
+        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+          {
+            "Trip_Id": currentAssignment.trip_id,
+            "Driver_id": currentAssignment.driver_id,
+            "Status": "DRIVING",
+          });
+        setforceRerender(forceRerender + 1);
+      } else if (option === "6") {
+        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        if (currentAssignment.status !== "DRIVING") alert("Invalid Input");
+        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+          {
+            "Trip_Id": currentAssignment.trip_id,
+            "Driver_id": currentAssignment.driver_id,
+            "Status": "DONE",
           });
         setforceRerender(forceRerender + 1);
       }
