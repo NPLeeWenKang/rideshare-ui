@@ -1,0 +1,50 @@
+{
+  "name": "react-web-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.1",
+    "cdbreact": "^1.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "mdb-react-ui-kit": "^4.2.0",
+    "react": "^18.2.0",
+    "react-auth-kit": "^2.7.1",
+    "react-bootstrap-alert": "^1.0.7",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.6.0",
+    "react-multi-select-component": "^4.3.4",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "^4.0.3",
+    "smart-webcomponents-react": "^14.4.0",
+    "web-vitals": "^2.1.4",
+    "ws": "^8.10.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

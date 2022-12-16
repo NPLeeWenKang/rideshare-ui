@@ -1,0 +1,28 @@
+/* Import Fonts */
+/* Primary: https://fonts.google.com/specimen/Poppins
+   Secondary: https://fonts.google.com/specimen/Montserrat*/
+
+   
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap');
+
+/* Initialise colors and fonts */
+:root{
+  --primary-color: #fff;
+  --secondary-color: #333;
+  --semidark-color:rgb(246 246 246);
+  --app-color: purple;
+
+  --smart-error: rgb(223 56 86)!important;
+  --smart-warning:rgb(244 162 46)!important;
+  --smart-success: rgb(79 181 107)!important;
+
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font :'Montserrat', sans-serif ;
+}
+
+/* Define default font and margin */
+* {
+  margin: 0;
+  font-family: var(--primary-font);
+}

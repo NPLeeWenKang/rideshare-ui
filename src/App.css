@@ -1,0 +1,9 @@
+/* Main container when side bar is closed */
+.mycontainer{
+    margin-left: 80px;
+}
+
+/* Main container when side bar is open */
+.mycontainer.open{
+    margin-left: 270px;
+}

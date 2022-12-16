@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  ui:
+    build: .
+    ports:
+      - 3000:3000
+networks:
+  default:
+    name: ict_net
+    external: true
