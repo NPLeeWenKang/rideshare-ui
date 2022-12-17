@@ -17,7 +17,7 @@ function MenuDriver({ userId }) {
     async function init() {
         const data1 = (await axios.get(`http://localhost:5000/api/v1/driver/${userId}`)).data[0];
 
-        const data2 = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data;
+        const data2 = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/driver/${userId}`)).data;
 
         setDriver(data1);
         setCurrentAssignment(data2);

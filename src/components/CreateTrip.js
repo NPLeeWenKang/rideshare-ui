@@ -14,7 +14,7 @@ function CreateTrip({ userId, changeMenu }) {
         const pickup = document.getElementById("pickup").value;
         const dropoff = document.getElementById("dropoff").value;
         console.log(userId, pickup, dropoff);
-        await axios.post(`http://localhost:5000/api/v1/trip`,
+        await axios.post(`http://localhost:5001/api/v1/trip`,
             {
                 "Passanger_Id": parseInt(userId),
                 "Pick_Up": pickup,

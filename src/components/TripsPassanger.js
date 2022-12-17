@@ -15,7 +15,7 @@ function TripsPassanger({ userId, changeMenu }) {
     }, []);
 
     async function init() {
-        const data = (await axios.get(`http://localhost:5000/api/v1/trip?passanger_id=${userId}`)).data;
+        const data = (await axios.get(`http://localhost:5001/api/v1/trip?passanger_id=${userId}`)).data;
         console.log(data);
         setTrips(data);
     }

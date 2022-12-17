@@ -83,9 +83,9 @@ function App() {
           });
         setforceRerender(forceRerender + 1);
       } else if (option === "3") {
-        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        const currentAssignment = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/driver/${userId}`)).data[0];
         if (currentAssignment.status !== "PENDING") alert("Invalid Input");
-        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+        await axios.put(`http://localhost:5001/api/v1/trip_assignment`,
           {
             "Trip_Id": currentAssignment.trip_id,
             "Driver_id": currentAssignment.driver_id,
@@ -93,9 +93,9 @@ function App() {
           });
         setforceRerender(forceRerender + 1);
       } else if (option === "4") {
-        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        const currentAssignment = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/driver/${userId}`)).data[0];
         if (currentAssignment.status !== "PENDING") alert("Invalid Input");
-        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+        await axios.put(`http://localhost:5001/api/v1/trip_assignment`,
           {
             "Trip_Id": currentAssignment.trip_id,
             "Driver_id": currentAssignment.driver_id,
@@ -103,9 +103,9 @@ function App() {
           });
         setforceRerender(forceRerender + 1);
       } else if (option === "5") {
-        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        const currentAssignment = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/driver/${userId}`)).data[0];
         if (currentAssignment.status !== "ACCEPTED") alert("Invalid Input");
-        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+        await axios.put(`http://localhost:5001/api/v1/trip_assignment`,
           {
             "Trip_Id": currentAssignment.trip_id,
             "Driver_id": currentAssignment.driver_id,
@@ -113,9 +113,9 @@ function App() {
           });
         setforceRerender(forceRerender + 1);
       } else if (option === "6") {
-        const currentAssignment = (await axios.get(`http://localhost:5000/api/v1/driver/current_assignment/${userId}`)).data[0];
+        const currentAssignment = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/driver/${userId}`)).data[0];
         if (currentAssignment.status !== "DRIVING") alert("Invalid Input");
-        await axios.put(`http://localhost:5000/api/v1/trip_assignment`,
+        await axios.put(`http://localhost:5001/api/v1/trip_assignment`,
           {
             "Trip_Id": currentAssignment.trip_id,
             "Driver_id": currentAssignment.driver_id,

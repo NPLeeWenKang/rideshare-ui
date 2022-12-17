@@ -17,7 +17,7 @@ function MenuPassanger({ userId }) {
     async function initMenuHome() {
         const data1 = (await axios.get(`http://localhost:5000/api/v1/passanger/${userId}`)).data[0];
 
-        const data2 = (await axios.get(`http://localhost:5000/api/v1/passanger/current_assignment/${userId}`)).data;
+        const data2 = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/passanger/${userId}`)).data;
 
         setPassanger(data1);
         setCurrentAssignment(data2);
