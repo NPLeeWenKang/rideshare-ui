@@ -53,7 +53,7 @@ function MenuPassanger({ userId }) {
                                         <div>Dropoff Location: {ca.drop_out}</div>
                                         <div>Start: {ca.start.Valid ? processDate(ca.start.Time) : "-"}</div>
                                         <div>End: {ca.end.Valid ? processDate(ca.end.Time) : "-"}</div>
-                                        <div>Status: {ca.status.Valid ? ca.status.String : "-"}</div>
+                                        <div>Status: Assigning...</div>
                                     </div>
                                 );
                             } else {
@@ -67,7 +67,13 @@ function MenuPassanger({ userId }) {
                                         <div>Dropoff Location: {ca.drop_out}</div>
                                         <div>Start: {ca.start.Valid ? processDate(ca.start.Time) : "-"}</div>
                                         <div>End: {ca.end.Valid ? processDate(ca.end.Time) : "-"}</div>
-                                        <div>Status: {ca.status.Valid ? ca.status.String : "-"}</div>
+                                        {
+                                            ca.status.Valid && ca.status.String === "REJECTED"
+                                                ?
+                                                <div>Status: Assigning...</div>
+                                                :
+                                                <div>Status: {ca.status.Valid ? ca.status.String : "-"}</div>
+                                        }
                                     </div>
                                 );
                             }
