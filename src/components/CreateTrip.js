@@ -7,7 +7,7 @@ import axios from "axios";
 function CreateTrip({ userId, changeMenu }) {
 
     async function cancelCreate() {
-        changeMenu(c.PASSenger);
+        changeMenu(c.PASSENGER);
     }
 
     async function startCreate() {
@@ -20,7 +20,7 @@ function CreateTrip({ userId, changeMenu }) {
                 "Pick_Up": pickup,
                 "Drop_Off": dropoff,
             });
-        changeMenu(c.PASSenger);
+        changeMenu(c.PASSENGER);
     }
 
     return (
@@ -35,7 +35,7 @@ function CreateTrip({ userId, changeMenu }) {
                 <input type="text" class="form-control" id="dropoff" />
             </div>
             <div class="input-group mt-3">
-                <button class="btn btn-denger" type="button" onClick={cancelCreate}>Cancel</button>
+                <button class="btn btn-danger" type="button" onClick={cancelCreate}>Cancel</button>
                 <button class="btn btn-success" type="button" onClick={startCreate}>Confirm</button>
             </div>
         </div>

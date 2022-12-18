@@ -45,7 +45,7 @@ function CreatePassenger({ changeMenu }) {
                 <input type="text" class="form-control" id="mobileNo" />
             </div>
             <div class="input-group mt-3">
-                <button class="btn btn-denger" type="button" onClick={cancelCreate}>Cancel</button>
+                <button class="btn btn-danger" type="button" onClick={cancelCreate}>Cancel</button>
                 <button class="btn btn-success" type="button" onClick={startCreate}>Confirm</button>
             </div>
         </div>

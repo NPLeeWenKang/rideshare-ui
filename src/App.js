@@ -38,10 +38,12 @@ function App() {
     if (menu === c.HOME) {
       if (option === "777") {
         setDisplayOption(false);
-        setMenu(c.CREATE_PASSenger);
+        setMenu(c.CREATE_PASSENGER);
+        return;
       } else if (option === "888") {
         setDisplayOption(false);
         setMenu(c.CREATE_DRIVER);
+        return;
       }
       const userType = option.charAt(0).toLowerCase();
       const userId = option.substring(1);
@@ -49,7 +51,7 @@ function App() {
         const data = (await axios.get(`http://localhost:5000/api/v1/passenger/${userId}`)).data;
         if (data.length != 1) alert("Invalid User");
         setUserId(userId);
-        setMenu(c.PASSenger);
+        setMenu(c.PASSENGER);
       } else if (userType === "d") {
         const data = (await axios.get(`http://localhost:5000/api/v1/driver/${userId}`)).data;
         if (data.length != 1) alert("Invalid User");
@@ -58,13 +60,13 @@ function App() {
       } else {
         alert("Invalid Input");
       }
-    } else if (menu === c.PASSenger) {
+    } else if (menu === c.PASSENGER) {
       if (option === "1") {
         setDisplayOption(false);
-        setMenu(c.UPDATE_PASSenger);
+        setMenu(c.UPDATE_PASSENGER);
       } else if (option === "2") {
         setDisplayOption(false);
-        setMenu(c.TRIPS_PASSenger);
+        setMenu(c.TRIPS_PASSENGER);
       } else if (option === "3") {
         setDisplayOption(false);
         setMenu(c.CREATE_TRIP);
@@ -135,17 +137,17 @@ function App() {
   function BodyRender() {
     if (menu === c.HOME) {
       return <MenuHome changeMenu={changeMenu} />;
-    } else if (menu === c.CREATE_PASSenger) {
+    } else if (menu === c.CREATE_PASSENGER) {
       return <CreatePassenger changeMenu={changeMenu} />;
     } else if (menu === c.CREATE_DRIVER) {
       return <CreateDriver changeMenu={changeMenu} />;
-    } else if (menu === c.PASSenger) {
+    } else if (menu === c.PASSENGER) {
       return <MenuPassenger changeMenu={changeMenu} userId={userId} />;
     } else if (menu === c.DRIVER) {
       return <MenuDriver changeMenu={changeMenu} userId={userId} />;
-    } else if (menu === c.UPDATE_PASSenger) {
+    } else if (menu === c.UPDATE_PASSENGER) {
       return <UpdatePassenger changeMenu={changeMenu} userId={userId} />;
-    } else if (menu === c.TRIPS_PASSenger) {
+    } else if (menu === c.TRIPS_PASSENGER) {
       return <TripsPassenger changeMenu={changeMenu} userId={userId} />;
     } else if (menu === c.CREATE_TRIP) {
       return <CreateTrip changeMenu={changeMenu} userId={userId} />;

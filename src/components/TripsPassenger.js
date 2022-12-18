@@ -21,7 +21,7 @@ function TripsPassenger({ userId, changeMenu }) {
     }
 
     async function cancelCreate() {
-        changeMenu(c.PASSenger);
+        changeMenu(c.PASSENGER);
     }
 
     return (
@@ -54,7 +54,7 @@ function TripsPassenger({ userId, changeMenu }) {
                 </tbody>
             </table>
             <div class="input-group mt-3">
-                <button class="btn btn-denger" type="button" onClick={cancelCreate}>Cancel</button>
+                <button class="btn btn-danger" type="button" onClick={cancelCreate}>Cancel</button>
             </div>
         </div>
     );
