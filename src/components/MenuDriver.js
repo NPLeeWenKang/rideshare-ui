@@ -47,7 +47,7 @@ function MenuDriver({ userId }) {
                     <div className="mt-3">========== Trip Status ==========</div>
                     <div key={currentAssignment[0].trip_id} className="mt-2">
                         <div>Trip Id: {currentAssignment[0].trip_id}</div>
-                        <div>Passanger: ({currentAssignment[0].passanger_id}) {currentAssignment[0].first_name} {currentAssignment[0].last_name}</div>
+                        <div>Passenger: ({currentAssignment[0].passenger_id}) {currentAssignment[0].first_name} {currentAssignment[0].last_name}</div>
                         <div>Mobile No: {currentAssignment[0].mobile_no}</div>
                         <div>Pickup Location: {currentAssignment[0].pick_up}</div>
                         <div>Dropoff Location: {currentAssignment[0].drop_out}</div>

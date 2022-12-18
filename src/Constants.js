@@ -1,9 +1,9 @@
 export const HOME = "HOME";
 
-export const PASSANGER = "PASSANGER";
-export const CREATE_PASSANGER = "CREATE_PASSANGER";
-export const UPDATE_PASSANGER = "UPDATE_PASSANGER";
-export const TRIPS_PASSANGER = "TRIPS_PASSANGER";
+export const PASSenger = "PASSenger";
+export const CREATE_PASSenger = "CREATE_PASSenger";
+export const UPDATE_PASSenger = "UPDATE_PASSenger";
+export const TRIPS_PASSenger = "TRIPS_PASSenger";
 export const CREATE_TRIP = "CREATE_TRIP";
 
 export const DRIVER = "DRIVER";

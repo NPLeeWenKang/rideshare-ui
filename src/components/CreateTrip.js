@@ -7,7 +7,7 @@ import axios from "axios";
 function CreateTrip({ userId, changeMenu }) {
 
     async function cancelCreate() {
-        changeMenu(c.PASSANGER);
+        changeMenu(c.PASSenger);
     }
 
     async function startCreate() {
@@ -16,11 +16,11 @@ function CreateTrip({ userId, changeMenu }) {
         console.log(userId, pickup, dropoff);
         await axios.post(`http://localhost:5001/api/v1/trip`,
             {
-                "Passanger_Id": parseInt(userId),
+                "Passenger_Id": parseInt(userId),
                 "Pick_Up": pickup,
                 "Drop_Off": dropoff,
             });
-        changeMenu(c.PASSANGER);
+        changeMenu(c.PASSenger);
     }
 
     return (
@@ -35,7 +35,7 @@ function CreateTrip({ userId, changeMenu }) {
                 <input type="text" class="form-control" id="dropoff" />
             </div>
             <div class="input-group mt-3">
-                <button class="btn btn-danger" type="button" onClick={cancelCreate}>Cancel</button>
+                <button class="btn btn-denger" type="button" onClick={cancelCreate}>Cancel</button>
                 <button class="btn btn-success" type="button" onClick={startCreate}>Confirm</button>
             </div>
         </div>

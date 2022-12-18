@@ -5,18 +5,18 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import MenuHome from './components/MenuHome';
-import CreatePassanger from './components/CreatePassanger';
+import CreatePassenger from './components/CreatePassenger';
 import * as c from "./Constants";
 
 import { useEffect, useState } from 'react';
 import CreateDriver from './components/CreateDriver';
-import MenuPassanger from './components/MenuPassanger';
+import MenuPassenger from './components/MenuPassenger';
 import MenuDriver from './components/MenuDriver';
 
 import axios from 'axios';
-import UpdatePassanger from './components/UpdatePassanger';
+import UpdatePassenger from './components/UpdatePassenger';
 import UpdateDriver from './components/UpdateDriver';
-import TripsPassanger from './components/TripsPassanger';
+import TripsPassenger from './components/TripsPassenger';
 import CreateTrip from './components/CreateTrip';
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
     if (menu === c.HOME) {
       if (option === "777") {
         setDisplayOption(false);
-        setMenu(c.CREATE_PASSANGER);
+        setMenu(c.CREATE_PASSenger);
       } else if (option === "888") {
         setDisplayOption(false);
         setMenu(c.CREATE_DRIVER);
@@ -46,10 +46,10 @@ function App() {
       const userType = option.charAt(0).toLowerCase();
       const userId = option.substring(1);
       if (userType === "p") {
-        const data = (await axios.get(`http://localhost:5000/api/v1/passanger/${userId}`)).data;
+        const data = (await axios.get(`http://localhost:5000/api/v1/passenger/${userId}`)).data;
         if (data.length != 1) alert("Invalid User");
         setUserId(userId);
-        setMenu(c.PASSANGER);
+        setMenu(c.PASSenger);
       } else if (userType === "d") {
         const data = (await axios.get(`http://localhost:5000/api/v1/driver/${userId}`)).data;
         if (data.length != 1) alert("Invalid User");
@@ -58,13 +58,13 @@ function App() {
       } else {
         alert("Invalid Input");
       }
-    } else if (menu === c.PASSANGER) {
+    } else if (menu === c.PASSenger) {
       if (option === "1") {
         setDisplayOption(false);
-        setMenu(c.UPDATE_PASSANGER);
+        setMenu(c.UPDATE_PASSenger);
       } else if (option === "2") {
         setDisplayOption(false);
-        setMenu(c.TRIPS_PASSANGER);
+        setMenu(c.TRIPS_PASSenger);
       } else if (option === "3") {
         setDisplayOption(false);
         setMenu(c.CREATE_TRIP);
@@ -135,18 +135,18 @@ function App() {
   function BodyRender() {
     if (menu === c.HOME) {
       return <MenuHome changeMenu={changeMenu} />;
-    } else if (menu === c.CREATE_PASSANGER) {
-      return <CreatePassanger changeMenu={changeMenu} />;
+    } else if (menu === c.CREATE_PASSenger) {
+      return <CreatePassenger changeMenu={changeMenu} />;
     } else if (menu === c.CREATE_DRIVER) {
       return <CreateDriver changeMenu={changeMenu} />;
-    } else if (menu === c.PASSANGER) {
-      return <MenuPassanger changeMenu={changeMenu} userId={userId} />;
+    } else if (menu === c.PASSenger) {
+      return <MenuPassenger changeMenu={changeMenu} userId={userId} />;
     } else if (menu === c.DRIVER) {
       return <MenuDriver changeMenu={changeMenu} userId={userId} />;
-    } else if (menu === c.UPDATE_PASSANGER) {
-      return <UpdatePassanger changeMenu={changeMenu} userId={userId} />;
-    } else if (menu === c.TRIPS_PASSANGER) {
-      return <TripsPassanger changeMenu={changeMenu} userId={userId} />;
+    } else if (menu === c.UPDATE_PASSenger) {
+      return <UpdatePassenger changeMenu={changeMenu} userId={userId} />;
+    } else if (menu === c.TRIPS_PASSenger) {
+      return <TripsPassenger changeMenu={changeMenu} userId={userId} />;
     } else if (menu === c.CREATE_TRIP) {
       return <CreateTrip changeMenu={changeMenu} userId={userId} />;
     } else if (menu === c.UPDATE_DRIVER) {

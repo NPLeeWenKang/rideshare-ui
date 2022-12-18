@@ -6,7 +6,7 @@ import * as c from "../Constants";
 import axios from "axios";
 import { useEffect, useState } from 'react';
 
-function TripsPassanger({ userId, changeMenu }) {
+function TripsPassenger({ userId, changeMenu }) {
 
     const [trips, setTrips] = useState([]);
 
@@ -15,13 +15,13 @@ function TripsPassanger({ userId, changeMenu }) {
     }, []);
 
     async function init() {
-        const data = (await axios.get(`http://localhost:5001/api/v1/trip?passanger_id=${userId}`)).data;
+        const data = (await axios.get(`http://localhost:5001/api/v1/trip?passenger_id=${userId}`)).data;
         console.log(data);
         setTrips(data);
     }
 
     async function cancelCreate() {
-        changeMenu(c.PASSANGER);
+        changeMenu(c.PASSenger);
     }
 
     return (
@@ -54,10 +54,10 @@ function TripsPassanger({ userId, changeMenu }) {
                 </tbody>
             </table>
             <div class="input-group mt-3">
-                <button class="btn btn-danger" type="button" onClick={cancelCreate}>Cancel</button>
+                <button class="btn btn-denger" type="button" onClick={cancelCreate}>Cancel</button>
             </div>
         </div>
     );
 }
 
-export default TripsPassanger;
+export default TripsPassenger;

@@ -5,9 +5,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import axios from "axios";
 import { useEffect, useState } from 'react';
 
-function MenuPassanger({ userId }) {
+function MenuPassenger({ userId }) {
 
-    const [passanger, setPassanger] = useState([]);
+    const [passenger, setPassenger] = useState([]);
     const [currentAssignment, setCurrentAssignment] = useState([]);
 
     useEffect(() => {
@@ -15,11 +15,11 @@ function MenuPassanger({ userId }) {
     }, []);
 
     async function initMenuHome() {
-        const data1 = (await axios.get(`http://localhost:5000/api/v1/passanger/${userId}`)).data[0];
+        const data1 = (await axios.get(`http://localhost:5000/api/v1/passenger/${userId}`)).data[0];
 
-        const data2 = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/passanger/${userId}`)).data;
+        const data2 = (await axios.get(`http://localhost:5001/api/v1/current_trip_assignment/passenger/${userId}`)).data;
 
-        setPassanger(data1);
+        setPassenger(data1);
         setCurrentAssignment(data2);
     }
 
@@ -31,12 +31,12 @@ function MenuPassanger({ userId }) {
     return (
         <div>
             <div>========== Ride Share ==========</div>
-            <div>Driver Id: {passanger.passanger_id}</div>
-            <div>First Name: {passanger.first_name}</div>
-            <div>Last Name: {passanger.last_name}</div>
-            <div>Email: {passanger.email}</div>
-            <div>Mobile No: {passanger.mobile_no}</div>
-            <div className="mt-3">Passanger Console</div>
+            <div>Driver Id: {passenger.passenger_id}</div>
+            <div>First Name: {passenger.first_name}</div>
+            <div>Last Name: {passenger.last_name}</div>
+            <div>Email: {passenger.email}</div>
+            <div>Mobile No: {passenger.mobile_no}</div>
+            <div className="mt-3">Passenger Console</div>
             <div>1. Update information</div>
             <div>2. Display trips</div>
             <div>3. Start a new trip</div>
@@ -90,4 +90,4 @@ function MenuPassanger({ userId }) {
     );
 }
 
-export default MenuPassanger;
+export default MenuPassenger;

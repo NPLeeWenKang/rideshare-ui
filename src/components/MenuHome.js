@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 function MenuHome() {
 
-    const [passangers, setPassangers] = useState([]);
+    const [passengers, setPassengers] = useState([]);
     const [drivers, setDrivers] = useState([]);
 
     useEffect(() => {
@@ -15,17 +15,17 @@ function MenuHome() {
     }, []);
 
     async function initMenuHome() {
-        const pData = (await axios.get("http://localhost:5000/api/v1/passanger")).data;
+        const pData = (await axios.get("http://localhost:5000/api/v1/passenger")).data;
         const dData = (await axios.get("http://localhost:5000/api/v1/driver")).data;
         console.log(pData);
-        setPassangers(pData);
+        setPassengers(pData);
         setDrivers(dData);
     }
 
     return (
         <div>
             <div>========== Ride Share ==========</div>
-            <div>Passanger & Driver Console</div>
+            <div>Passenger & Driver Console</div>
             <table className={"table"}>
                 <thead>
                     <tr>
@@ -36,11 +36,11 @@ function MenuHome() {
                     </tr>
                 </thead>
                 <tbody>
-                    {passangers.map(p => {
+                    {passengers.map(p => {
                         return (
-                            <tr key={"p" + p.passanger_id}>
-                                <th>p{p.passanger_id}</th>
-                                <td>Passanger</td>
+                            <tr key={"p" + p.passenger_id}>
+                                <th>p{p.passenger_id}</th>
+                                <td>Passenger</td>
                                 <td>{p.first_name}</td>
                                 <td>{p.last_name}</td>
                             </tr>
@@ -59,7 +59,7 @@ function MenuHome() {
                 </tbody>
             </table>
             <div>000. Refresh</div>
-            <div>777. Create Passanger</div>
+            <div>777. Create Passenger</div>
             <div>888. Create Driver</div>
         </div>
     );
